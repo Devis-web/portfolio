@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veille Technologique – Chrys Boli Bi</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .veille-intro { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; margin-bottom: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .sources-list li { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--muted); }
+    .source-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .source-dot.blue { background: var(--accent2); }
+    .veille-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .veille-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; transition: all 0.3s; }
+    .veille-card:hover { transform: translateY(-4px); box-shadow: 0 18px 52px rgba(0,0,0,0.35); }
+    .veille-card:nth-child(1):hover { border-color: rgba(126,255,212,0.3); }
+    .veille-card:nth-child(2):hover { border-color: rgba(91,191,255,0.3); }
+    .veille-big-num { font-family: 'Syne', sans-serif; font-size: 4rem; font-weight: 800; color: rgba(126,255,212,0.07); line-height: 1; margin-bottom: 16px; }
+    .veille-card:nth-child(2) .veille-big-num { color: rgba(91,191,255,0.07); }
+    .veille-title { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 10px; }
+    .veille-section { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border); }
+    .veille-section-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+    .veille-card:nth-child(2) .veille-section-label { color: var(--accent2); }
+    .veille-section p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .veille-summary { margin-top: 22px; padding: 16px 18px; border-radius: 10px; font-size: 0.85rem; line-height: 1.6; }
+    .veille-card:nth-child(1) .veille-summary { background: rgba(126,255,212,0.05); border: 1px solid rgba(126,255,212,0.1); color: var(--accent); }
+    .veille-card:nth-child(2) .veille-summary { background: rgba(91,191,255,0.05); border: 1px solid rgba(91,191,255,0.1); color: var(--accent2); }
+    @media (max-width: 900px) { .veille-intro { grid-template-columns: 1fr; } .veille-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">MON PORTFOLIO.</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html"> Accueil</a></li>
+    <li><a href="parcours.html"> Parcours</a></li>
+    <li><a href="competences.html"> Compétences</a></li>
+    <li><a href="projets.html"> Projets</a></li>
+    <li><a href="veille.html" class="active"> Veille</a></li>
+    <li><a href="contact.html"> Contact</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page">
+  <p class="page-label anim-1">05 — Veille Technologique</p>
+  <h1 class="page-title anim-2">Ma veille<br>technologique</h1>
+
+  <!-- INTRO + SOURCES -->
+  <div class="veille-intro fade-in">
+    <div>
+      <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:700;margin-bottom:14px">Pourquoi la veille ?</p>
+      <p style="font-size:0.92rem;color:var(--muted);line-height:1.75">
+        Dans le domaine informatique, les technologies évoluent très rapidement.
+        La veille technologique me permet de rester informé des dernières tendances,
+        d'anticiper les évolutions du secteur et d'enrichir continuellement mes compétences
+        en dehors des cours.
+      </p>
+      <p style="font-size:0.92rem;color:var(--muted);line-height:1.75;margin-top:12px">
+        Je maintiens une veille régulière sur <strong style="color:var(--text)">2 sujets principaux</strong> en lien avec mon parcours BTS SIO SLAM et mes centres d'intérêt.
+      </p>
+    </div>
+    <div>
+      <p style="font-size:0.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2);font-weight:700;margin-bottom:14px">Mes sources d'information</p>
+      <ul class="sources-list">
+        <li><span class="source-dot"></span> <strong style="color:var(--text)">Feedly</strong> — Agrégateur de flux RSS tech</li>
+        <li><span class="source-dot"></span> <strong style="color:var(--text)">Dev.to Weekly</strong> — Newsletter développeurs</li>
+        <li><span class="source-dot blue"></span> <strong style="color:var(--text)">CSS-Tricks</strong> — Actualités front-end</li>
+        <li><span class="source-dot blue"></span> <strong style="color:var(--text)">MDN Web Docs</strong> — Documentation officielle</li>
+        <li><span class="source-dot"></span> <strong style="color:var(--text)">YouTube Tech</strong> — Fireship, Traversy Media</li>
+        <li><span class="source-dot blue"></span> <strong style="color:var(--text)">X (Twitter)</strong> — Communauté #WebDev</li>
+        <li><span class="source-dot"></span> <strong style="color:var(--text)">Podcast Underscore_</strong> — Tech FR</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2 SUJETS DE VEILLE -->
+  <div class="veille-grid">
+
+    <!-- VEILLE 1 -->
+    <div class="veille-card fade-in">
+      <div class="veille-big-num">01</div>
+      <div class="veille-title">L'évolution du développement web front-end</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+        <span class="badge">Technologies web</span>
+        <span class="badge orange">Frameworks JS</span>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">❓ Problématique</div>
+        <p>Comment les nouveaux frameworks JavaScript (React, Vue, Svelte) transforment-ils la façon dont on conçoit et développe des interfaces web modernes ? Quelles bonnes pratiques s'imposent ?</p>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">⚙️ Méthode & Fréquence</div>
+        <p>Lecture hebdomadaire de newsletters (Dev.to Weekly, CSS-Tricks), suivi de dépôts GitHub populaires, tutoriels YouTube tech. <strong style="color:var(--text)">2 à 3h par semaine.</strong></p>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">🔍 Quelques découvertes</div>
+        <p>
+          → Montée en puissance des meta-frameworks (Next.js, Nuxt 3, SvelteKit)<br>
+          → CSS Container Queries — layouts adaptatifs sans JS<br>
+          → Web Components natifs de plus en plus stables<br>
+          → Importance croissante de l'accessibilité (WCAG 2.2)<br>
+          → Tendance au retour du server-side rendering
+        </p>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">💭 Réflexions personnelles</div>
+        <p>Le web moderne tend vers plus de performance, d'accessibilité et de responsabilité environnementale. Les outils évoluent très vite — la veille est indispensable pour rester pertinent dans ce domaine en constante mutation.</p>
+      </div>
+
+      <div class="veille-summary">
+        📌 <strong>Résumé :</strong> Les frameworks JavaScript révolutionnent le développement front-end, mais les fondamentaux HTML/CSS/JS restent essentiels. Maîtriser les bases solidement avant d'aborder les frameworks est la stratégie gagnante.
+      </div>
+    </div>
+
+    <!-- VEILLE 2 -->
+    <div class="veille-card fade-in">
+      <div class="veille-big-num">02</div>
+      <div class="veille-title">Intelligence Artificielle & développement logiciel</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+        <span class="badge blue">IA générative</span>
+        <span class="badge blue">Dev Tools</span>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">❓ Problématique</div>
+        <p>En quoi les outils d'intelligence artificielle générative (GitHub Copilot, ChatGPT, Claude) modifient-ils concrètement les pratiques et la productivité des développeurs au quotidien ?</p>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">⚙️ Méthode & Fréquence</div>
+        <p>Flux RSS via Feedly (TechCrunch, Le Monde Informatique, The Verge Tech), podcast "Underscore_", expérimentation personnelle des outils. <strong style="color:var(--text)">Veille quotidienne ~30min.</strong></p>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">🔍 Quelques découvertes</div>
+        <p>
+          → GitHub Copilot : gain de ~55% de vitesse selon certaines études<br>
+          → L'IA aide à la génération de tests unitaires automatiques<br>
+          → Les "AI Code Reviewers" intégrés aux IDE se développent<br>
+          → Cursor (éditeur IA) gagne beaucoup de terrain chez les devs<br>
+          → Risques : hallucinations de code, dépendance, sécurité
+        </p>
+      </div>
+
+      <div class="veille-section">
+        <div class="veille-section-label">💭 Réflexions personnelles</div>
+        <p>L'IA ne remplace pas le développeur mais transforme profondément son rôle. Savoir prompter efficacement, comprendre et vérifier le code généré, et maintenir un esprit critique deviennent des compétences clés à part entière.</p>
+      </div>
+
+      <div class="veille-summary">
+        📌 <strong>Résumé :</strong> L'IA est un accélérateur puissant, pas un substitut au développeur. Elle amplifie les compétences de ceux qui savent l'utiliser intelligemment. La formation aux outils IA est devenue incontournable en 2025.
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:56px;flex-wrap:wrap;gap:12px" class="fade-in">
+    <a href="projets.html" class="btn-outline">← Projets</a>
+    <a href="contact.html" class="btn-primary">Me contacter →</a>
+  </div>
+</div>
+
+<footer><strong>Boli Bi Tizié Chrys</strong> · BTS SIO SLAM · IRIS Paris · 2024–2026</footer>
+<script src="script.js"></script>
+</body>
+</html>

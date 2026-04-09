@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parcours – Chrys Boli Bi</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .glow { position: fixed; top: 10%; right: -5%; width: 520px; height: 520px; background: radial-gradient(circle, rgba(126,255,212,0.07) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; padding: 110px 48px 80px; max-width: 1100px; margin: 0 auto; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(126,255,212,0.08); border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 0.77rem; color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 28px; width: fit-content; }
+    .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+    .hero-name { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 800; line-height: 0.95; letter-spacing: -3px; margin-bottom: 24px; position: relative; z-index: 1; }
+    .hero-name .gradient { display: block; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-desc { font-size: 1.1rem; color: var(--muted); max-width: 520px; line-height: 1.75; margin-bottom: 40px; position: relative; z-index: 1; }
+    .hero-desc strong { color: var(--text); }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 72px; position: relative; z-index: 1; }
+    .hero-strip { display: flex; gap: 48px; padding-top: 40px; border-top: 1px solid var(--border); flex-wrap: wrap; position: relative; z-index: 1; }
+    .strip-item label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 5px; }
+    .strip-item span { font-size: 0.92rem; font-weight: 500; }
+    .avatar-zone { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; z-index: 1; }
+    .avatar-ring-outer { width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(126,255,212,0.1); display: flex; align-items: center; justify-content: center; animation: spin 20s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-ring-inner { width: 230px; height: 230px; border-radius: 50%; background: linear-gradient(135deg, rgba(126,255,212,0.1), rgba(91,191,255,0.06)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 5.5rem; animation: spin 20s linear infinite reverse; }
+    .pages-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto 80px; padding: 0 48px; }
+    .page-nav-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-decoration: none; color: var(--text); display: flex; align-items: center; gap: 16px; transition: all 0.25s; }
+    .page-nav-card:hover { border-color: rgba(126,255,212,0.3); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .page-nav-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(126,255,212,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .page-nav-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 3px; }
+    .page-nav-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; }
+    @media (max-width: 900px) { .avatar-zone { display: none; } }
+    @media (max-width: 768px) { .hero { padding: 90px 20px 60px; } .pages-nav { padding: 0 20px; grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+<div class="glow"></div>
+<nav>
+  <a href="index.html" class="nav-logo">MON PORTFOLIO.</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html"> Accueil</a></li>
+    <li><a href="Parcours.html" class="active"> Parcours</a></li>
+    <li><a href="Competences.html"> Compétences</a></li>
+    <li><a href="Projets.html"> Projets</a></li>
+    <li><a href="Veille.html"> Veille</a></li>
+    <li><a href="Contact.html"> Contact</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page">
+
+    <p class="page-label anim-1">02 — Parcours & Formation</p>
+    <h1 class="page-title anim-2">Mon parcours<br>& formations</h1>
+
+    <!-- ====== 2 COLONNES ====== -->
+    <div class="two-col">
+
+        <!-- ================= FORMATIONS ================= -->
+        <div class="fade-in">
+            <div class="col-title" style="color:var(--accent)">
+                <span style="background:rgba(126,255,146,0.10)">●</span> FORMATIONS
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-period">2024 – 2026 • En cours</div>
+                    <div class="timeline-title">BTS SIO – Option SLAM</div>
+                    <div class="timeline-subtitle">IRIS Paris</div>
+                    <div class="timeline-desc">
+                        Solutions Informatiques aux Organisations (SLAM).<br>
+                        Développement web & logiciel, gestion de base de données, cybersécurité, analyse, méthodes agiles.
+                    </div>
+                    <div style="margin-top:12px">
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">PHP</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">SQL</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-period">2024 • Diplômé</div>
+                    <div class="timeline-title">Baccalauréat A</div>
+                    <div class="timeline-subtitle">Institut Rosée Divine – Abidjan</div>
+                    <div class="timeline-desc">
+                        Civilisation, Littérature et Philosophie.<br>
+                        Développement de l'esprit critique, capacités d’analyse et compétences rédactionnelles.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= EXPÉRIENCES ================= -->
+        <div class="fade-in">
+            <div class="col-title" style="color:var(--accent2)">
+                <span style="background:rgba(98,139,255,0.10)">●</span> EXPÉRIENCES
+            </div>
+
+            <div class="timeline blue">
+
+                <div class="timeline-item blue">
+                    <div class="timeline-period blue">Juin – Juil. 2025 • 1 mois</div>
+                    <div class="timeline-title">Stage — Développement Web</div>
+                    <div class="timeline-subtitle">Tinan Grillades</div>
+                    <div class="timeline-desc">
+                        Conception & développement d’un site vitrine dynamique.<br>
+                        Gestion du code, intégration HTML/CSS/JS, PHP.
+                    </div>
+                </div>
+
+                <div class="timeline-item blue">
+                    <div class="timeline-period blue">Nov – Déc. 2025 • 1 mois</div>
+                    <div class="timeline-title">Stage — Développement Web</div>
+                    <div class="timeline-subtitle">Entreprise Familiale</div>
+                    <div class="timeline-desc">
+                        Intégration HTML/CSS, scripts JS, PHP. Personnalisation WordPress.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= CERTIFICATIONS ================= -->
+    <div class="fade-in" style="margin-top:64px">
+        <h2 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:32px">
+            Certifications
+        </h2>
+
+        <div class="certif-grid">
+
+            <div class="certif-card">
+                <div class="certif-icon">🌐</div>
+                <div class="certif-name">PIX Certification</div>
+                <div class="certif-detail">Compétences numériques — En cours</div>
+            </div>
+
+            <div class="certif-card">
+                <div class="certif-icon">�</div>
+                <div class="certif-name">Certification WordPress</div>
+                <div class="certif-detail">OpenClassrooms</div>
+                <div style="margin-top:12px; display:flex; gap:12px;">
+                    <a href="certif_wordpress.pdf" target="_blank" style="color:var(--accent); text-decoration:none; font-size:0.85rem;">📄 Voir le certificat</a>
+                    <a href="certif_wordpress.pdf" download style="color:var(--accent); text-decoration:none; font-size:0.85rem;">⬇ Télécharger</a>
+                </div>
+            </div>
+
+            <div class="certif-card">
+                <div class="certif-icon">💻</div>
+                <div class="certif-name">Certification C</div>
+                <div class="certif-detail">OpenClassrooms</div>
+                <div style="margin-top:12px; display:flex; gap:12px;">
+                    <a href="certif_c.pdf" target="_blank" style="color:var(--accent); text-decoration:none; font-size:0.85rem;">📄 Voir le certificat</a>
+                    <a href="certif_c.pdf" download style="color:var(--accent); text-decoration:none; font-size:0.85rem;">⬇ Télécharger</a>
+                </div>
+            </div>
+
+            <div class="certif-card">
+                <div class="certif-icon">🐍</div>
+                <div class="certif-name">Certification Python</div>
+                <div class="certif-detail">OpenClassrooms</div>
+                <div style="margin-top:12px; display:flex; gap:12px;">
+                    <a href="certif_python.pdf" target="_blank" style="color:var(--accent); text-decoration:none; font-size:0.85rem;">📄 Voir le certificat</a>
+                    <a href="certif_python.pdf" download style="color:var(--accent); text-decoration:none; font-size:0.85rem;">⬇ Télécharger</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= CURRICULUM VITAE ================= -->
+    <div class="fade-in" style="margin-top:64px">
+        <h2 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:32px">
+            Curriculum Vitae
+        </h2>
+
+        <div style="display: flex; justify-content: center; margin-top: 32px;">
+            <iframe src="cv_chrys_boli_bi.pdf" width="100%" height="600px" style="max-width: 100%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"></iframe>
+        </div>
+    </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:24px;flex-wrap:wrap;gap:12px" class="fade-in">
+    <a href="index.html" class="btn-outline">← Accueil</a>
+    <a href="Competences.html" class="btn-primary">Compétences →</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

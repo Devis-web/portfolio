@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil – Chrys Boli Bi</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .glow { position: fixed; top: 10%; right: -5%; width: 520px; height: 520px; background: radial-gradient(circle, rgba(126,255,212,0.07) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; padding: 110px 48px 80px; max-width: 1100px; margin: 0 auto; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(126,255,212,0.08); border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 0.77rem; color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 28px; width: fit-content; }
+    .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+    .hero-name { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 800; line-height: 0.95; letter-spacing: -3px; margin-bottom: 24px; position: relative; z-index: 1; }
+    .hero-name .gradient { display: block; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-desc { font-size: 1.1rem; color: var(--muted); max-width: 520px; line-height: 1.75; margin-bottom: 40px; position: relative; z-index: 1; }
+    .hero-desc strong { color: var(--text); }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 72px; position: relative; z-index: 1; }
+    .hero-strip { display: flex; gap: 48px; padding-top: 40px; border-top: 1px solid var(--border); flex-wrap: wrap; position: relative; z-index: 1; }
+    .strip-item label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 5px; }
+    .strip-item span { font-size: 0.92rem; font-weight: 500; }
+    .avatar-zone { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; z-index: 1; }
+    .avatar-ring-outer { width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(126,255,212,0.1); display: flex; align-items: center; justify-content: center; animation: spin 20s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-ring-inner { width: 230px; height: 230px; border-radius: 50%; background: linear-gradient(135deg, rgba(126,255,212,0.1), rgba(91,191,255,0.06)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 5.5rem; animation: spin 20s linear infinite reverse; }
+    .pages-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto 80px; padding: 0 48px; }
+    .page-nav-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-decoration: none; color: var(--text); display: flex; align-items: center; gap: 16px; transition: all 0.25s; }
+    .page-nav-card:hover { border-color: rgba(126,255,212,0.3); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .page-nav-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(126,255,212,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .page-nav-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 3px; }
+    .page-nav-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; }
+    @media (max-width: 900px) { .avatar-zone { display: none; } }
+    @media (max-width: 768px) { .hero { padding: 90px 20px 60px; } .pages-nav { padding: 0 20px; grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+<div class="glow"></div>
+<nav>
+  <a href="index.html" class="nav-logo">MON PORTFOLIO.</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active"> Accueil</a></li>
+    <li><a href="parcours.html"> Parcours</a></li>
+    <li><a href="competences.html"> Compétences</a></li>
+    <li><a href="projets.html"> Projets</a></li>
+    <li><a href="veille.html"> Veille</a></li>
+    <li><a href="contact.html"> Contact</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+<div class="hero anim-1">
+  <div class="hero-tag"><div class="pulse"></div> Disponible pour alternance 2026–2027</div>
+  <h1 class="hero-name anim-2">Boli Bi Tizié<br><span class="gradient">Chrys</span></h1>
+  <p class="hero-desc anim-3">Étudiant en <strong>2ème année de BTS SIO (option SLAM)</strong> à IRIS Paris.<br>Passionné par le développement web — HTML, CSS, JavaScript & PHP.</p>
+  <div class="hero-ctas anim-4">
+    <a href="projets.html" class="btn-primary">Voir mes projets →</a>
+    <a href="contact.html" class="btn-outline">Me contacter</a>
+    <a href="cv_chrys_boli_bi.pdf" target="_blank" class="btn-outline">📄 Mon CV</a>
+  </div>
+  <div class="hero-strip anim-4">
+    <div class="strip-item"><label>Formation</label><span>BTS SIO · SLAM</span></div>
+    <div class="strip-item"><label>École</label><span>IRIS Paris</span></div>
+    <div class="strip-item"><label>Localisation</label><span>Saint-Jean-de-Braye, 45</span></div>
+    <div class="strip-item"><label>Disponible</label><span>Stage / Alternance</span></div>
+  </div>
+  <div class="avatar-zone">
+    <div class="avatar-ring-outer"><div class="avatar-ring-inner">👨‍💻</div></div>
+  </div>
+</div>
+<div class="pages-nav">
+  <a href="parcours.html" class="page-nav-card"><div class="page-nav-icon">🎓</div><div><div class="page-nav-label">Page 02</div><div class="page-nav-title">Parcours & Formation</div></div></a>
+  <a href="competences.html" class="page-nav-card"><div class="page-nav-icon" style="background:rgba(91,191,255,0.08)">⚡</div><div><div class="page-nav-label">Page 03</div><div class="page-nav-title">Compétences</div></div></a>
+  <a href="projets.html" class="page-nav-card"><div class="page-nav-icon" style="background:rgba(255,179,71,0.08)">🚀</div><div><div class="page-nav-label">Page 04</div><div class="page-nav-title">Projets</div></div></a>
+  <a href="veille.html" class="page-nav-card"><div class="page-nav-icon">🔍</div><div><div class="page-nav-label">Page 05</div><div class="page-nav-title">Veille Techno</div></div></a>
+  <a href="contact.html" class="page-nav-card"><div class="page-nav-icon" style="background:rgba(91,191,255,0.08)">✉️</div><div><div class="page-nav-label">Page 06</div><div class="page-nav-title">Contact</div></div></a>
+</div>
+
+  <div style="display:flex;justify-content:flex-end;margin-top:24px;flex-wrap:wrap;gap:12px" class="fade-in">
+    <a href="parcours.html" class="btn-primary">Voir mon parcours →</a>
+  </div>
+</div>
+<footer><strong>Boli Bi Tizié Chrys</strong> · BTS SIO SLAM · IRIS Paris · 2024–2026</footer>
+<script src="script.js"></script>
+</body>
+</html>
